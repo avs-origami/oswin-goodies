@@ -130,7 +130,7 @@ def concat_at_end(arr1: Float[Arr, "T nx"], arr2: Float[Arr, "nx"], axis: int = 
     del arr1_shape[axis]
     assert np.all(np.array(arr1_shape) == np.array(arr2.shape))
 
-    return jp.concatenate([arr1, jp.expand_dims(arr2, axis=axis)], axis=axis)
+    return jnp.concatenate([arr1, jnp.expand_dims(arr2, axis=axis)], axis=axis)
 
 
 def sinc(x: Float[Arr, "..."]) -> Float[Arr, "..."]:
